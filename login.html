@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Online Assessment Platform</title>     
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="undefined" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/6c7c7565ca.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css">
+
+    <!-- Local stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        html, body {
+            height: 100%; /* Full height */
+            margin: 0; /* Remove default margin */
+        }
+
+        body {
+            background-color: #f3e4f7; /* Light purple background */
+        }
+
+        .onlineTest {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative; /* Position relative for logo positioning */
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 250px; /* Adjust size as needed */
+            height: auto;
+            z-index: 1000; /* Ensure logo is on top */
+        }
+
+        .leftPanel {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+        .onlineTestImage {
+            width: 100%;
+            height: auto;
+            max-width: 350px;
+        }
+
+        .platform-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .developed-by {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .rightPanel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+        .rightPanel form {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-proceed {
+            background-color: #a569bd; /* Button color similar to the theme */
+            color: white;
+            border: none;
+        }
+
+        .btn-proceed:hover {
+            background-color: #8e44ad;
+            color: #fff;
+        }
+
+        .btn-signup {
+            background-color: #6c757d; /* Grey button color */
+            color: white;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .btn-signup:hover {
+            background-color: #5a6268;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container onlineTest">
+        <img src="SPARK.jpg" alt="Logo" class="logo"> <!-- Updated logo -->
+
+        <div class="row w-100 h-200 m-0">
+            <div class="col-12 col-md-7 leftPanel text-center">
+                <img src="PM.jpg" alt="online test image" class="onlineTestImage">
+                <h1 class="platform-title">Online Assessment Platform</h1>
+                <h5 class="developed-by">Developed by SPARKS</h5>
+            </div>
+
+            <div class="col-12 col-md-5 rightPanel">
+                <form id="loginForm">
+                    <h2 class="text-center">Login</h2> <!-- Added heading for Login -->
+
+                    <div class="form-group">
+                        <label for="user-name">Name</label>
+                        <input type="text" id="user-name" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">Email</label>
+                        <input type="email" id="user-email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-password">Password</label>
+                        <input type="password" id="user-password" name="password" class="form-control" required>
+                    </div>
+
+                    <div class="text-right">
+                        <button type="button" class="btn btn-signup" onclick="window.location.href='signup.html'">Sign Up</button>
+                        <button type="submit" class="btn btn-proceed">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

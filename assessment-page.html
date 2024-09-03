@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment | Online Assessment Platform</title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="undefined" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/6c7c7565ca.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css">
+
+    <!-- Local stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        body {
+            background-color: #f3e4f7; /* Light purple background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 150px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .assessment-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #a569bd;
+            border: none;
+            margin: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #8e44ad;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+            margin: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="SPARK.jpg" alt="Logo" class="logo"> <!-- Include the logo -->
+
+        <h1 class="assessment-title">Assessment Instructions</h1>
+        <p>Welcome to the assessment. Please read the following instructions carefully:</p>
+        <ul class="list-unstyled">
+            <li>1. You have 60 minutes to complete the assessment.</li>
+            <li>2. Answer all the questions to the best of your ability.</li>
+            <li>3. Make sure to review your answers before submission.</li>
+            <li>4. Good luck!</li>
+        </ul>
+
+        <div class="timer">
+            <strong>Time Remaining:</strong> <span id="timer">60:00</span>
+        </div>
+
+        <a href="start-assessment.html" class="btn btn-primary">Start Assessment</a>
+        <a href="welcome.html" class="btn btn-secondary">Return to Home</a>
+    </div>
+
+    <!-- Javascript files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        // Timer script
+        let time = 60 * 60; // 60 minutes in seconds
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            if (time > 0) {
+                time--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                // Time's up logic here
+                alert('Time is up!');
+            }
+        }
+
+        updateTimer();
+    </script>
+</body>
+</html>
